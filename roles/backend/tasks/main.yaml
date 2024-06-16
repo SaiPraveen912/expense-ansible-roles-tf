@@ -56,8 +56,15 @@
   ansible.builtin.template:
     src: backend.service.j2
     dest: /etc/systemd/system/backend.service
-  notify: daemon reload
+  
+- name: daemon reload
+  ansible.builtin.systemd_service:
+    daemon_reload: true
 
+- name: Enable backend service
+  ansible.builtin.service:
+    name: backend
+    enabled: yes
 
 - name: install python mysql dependencies
   ansible.builtin.pip:
@@ -75,9 +82,6 @@
     state: import
     name: all
 
-# - name: daemon reload
-#   ansible.builtin.systemd_service:
-#     daemon_reload: true 
 
 - name: start and enable backend service
   tags:
@@ -85,4 +89,3 @@
   ansible.builtin.service:
     name: backend
     state: restarted
-    enabled: yes
