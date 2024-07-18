@@ -39,12 +39,12 @@
 #     dest: /app
 #     remote_src: yes
 
-- name: install npm dependencies
-  tags:
-  - deployment
-  ansible.builtin.command: npm install
-  args:
-    chdir: /app # npm install should be installed in /app dierectory
+# - name: install npm dependencies
+#   tags:
+#   - deployment
+#   ansible.builtin.command: npm install
+#   args:
+#     chdir: /app # npm install should be installed in /app dierectory
 
 # - name: copy backend service
 #   ansible.builtin.template:

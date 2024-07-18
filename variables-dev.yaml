@@ -3,3 +3,4 @@ login_host: db-dev.daws-78s.cloud
 login_password: ExpenseApp1
 DB_HOST: db-dev.daws-78s.cloud
 BACKEND_API_URL: backend.app-dev.daws-78s.cloud
+nexus_url: nexus.daws-78s.cloud:8081
